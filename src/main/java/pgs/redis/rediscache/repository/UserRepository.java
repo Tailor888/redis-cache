@@ -37,4 +37,11 @@ public class UserRepository {
     public void delete(Integer id) {
 
     }
+
+    @Cacheable(value = "propertyTest", key = "#user.getProperty('name')")
+    public User propertyTest(User user) throws InterruptedException {
+
+        Thread.sleep(5000);
+        return user;
+    }
 }

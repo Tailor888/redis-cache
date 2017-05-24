@@ -35,4 +35,12 @@ public class UserController {
     public void delete(@RequestParam("id") Integer id) {
         userRepository.delete(id);
     }
+
+    @GetMapping("testProperty")
+    public String testProperty(@RequestParam("name") String name) throws InterruptedException {
+        User user = new User(1000, "tester");
+        user.setProperty("name", name);
+
+        return userRepository.propertyTest(user).toString();
+    }
 }

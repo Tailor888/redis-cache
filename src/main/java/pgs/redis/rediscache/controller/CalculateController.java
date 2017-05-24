@@ -22,14 +22,14 @@ public class CalculateController {
 
     //these 2 methods require KeyGenerator Bean, else keys will be the same for both of them
     @RequestMapping("test1")
-    @Cacheable("test")
+    @Cacheable("propertyTest")
     public String test1(@RequestParam(value = "random", required = false) Integer random) throws InterruptedException {
         System.out.println("test1 for: " + random);
         return "test1";
     }
 
     @RequestMapping("test2")
-    @Cacheable("test")
+    @Cacheable("propertyTest")
     public String test2(@RequestParam(value = "random", required = false) Integer random) throws InterruptedException {
         System.out.println("test2 for: " + random);
         return "test2";
