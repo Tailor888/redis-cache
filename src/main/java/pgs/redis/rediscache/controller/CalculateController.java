@@ -15,8 +15,9 @@ public class CalculateController {
     @RequestMapping("getResult")
     @Cacheable("getResult")
     public String getResult(@RequestParam(value = "random", required = false) Integer random) throws InterruptedException {
-        System.out.println("getResult");
-        return "result";
+        String result = "result " + random;
+        System.out.println(result);
+        return result;
     }
 
 
